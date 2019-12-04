@@ -1,6 +1,6 @@
 # Informative Title for the Project
 
-## Names of the First and Second and Third Team Member
+## Declan Casey, Noor Buchi, Pedro Carmo, Nolan Thompson
 
 ## Abstract
 
