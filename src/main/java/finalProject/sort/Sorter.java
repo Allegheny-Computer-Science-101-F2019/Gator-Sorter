@@ -30,4 +30,8 @@ public abstract class Sorter {
   /** Require that a Sorter provide a method for int[] arrays. */
   public abstract int[] sort(int[] source);
 
+  /** TODO: add a Sorter and Timer method */
+
+  /** TODO: add a Sorter and Explain method */
+
 }
