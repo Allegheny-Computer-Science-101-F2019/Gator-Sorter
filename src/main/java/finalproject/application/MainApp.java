@@ -27,7 +27,7 @@ public class MainApp {
     System.out.println("Please enter the size of the data structure to be generated");
     int dataSize = userInput.nextInt();
     System.out.println(dataSize);
-    BubbleSort bubbleSorter = new BubbleSort();
+    SelectionSort bubbleSorter = new SelectionSort();
     int[] myArray = {9,8,7,6,5,4,2,1};
     // for (int i = 4; i >= 0; i--) {
     //   myArray[i] = i;
