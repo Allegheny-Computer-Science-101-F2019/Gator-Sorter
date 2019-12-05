@@ -1,4 +1,4 @@
-package finalProject.sort;
+package finalproject.sort;
 
 /**
  * An interface for all of the sorting implementations.

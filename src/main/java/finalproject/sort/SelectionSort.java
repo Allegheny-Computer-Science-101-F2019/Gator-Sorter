@@ -1,20 +1,14 @@
-package finalProject.sort;
-
-/**
- * An implementation of the BubbleSort sorting algorithm.
- *
- * @author Gregory M. Kapfhammer
- */
+package finalproject.sort;
 
 
-public class BubbleSort extends Sorter {
+public class SelectionSort extends Sorter {
 
   /** Define the index at which an array starts. */
   private static int ARRAY_START = 0;
 
   /** Define the name of this sorting algorithm. */
-  public BubbleSort() {
-    name = "BubbleSort";
+  public SelectionSort() {
+    name = "SelectionSort";
   }
 
   /** Bubble-sort of an array of chars into a nondecreasing order. This
@@ -31,16 +25,7 @@ public class BubbleSort extends Sorter {
   public char[] sort(char[] source) {
     int length = source.length;
     char[] sorted = new char[source.length];
-    System.arraycopy(source, ARRAY_START, sorted, ARRAY_START, source.length);
-    for (int i = 0; i < length; i++) {
-      for (int j = 0; j < (length - 1); j++) {
-        if (sorted[j] > sorted[j + 1]) {
-          char temporary = sorted[j];
-          sorted[j] = sorted[j + 1];
-          sorted[j + 1] = temporary;
-        }
-      }
-    }
+    // TODO:Implement appropriate sorting algorithm
     return sorted;
   }
 
@@ -58,28 +43,19 @@ public class BubbleSort extends Sorter {
   public int[] sort(int[] source) {
     int length = source.length;
     int[] sorted = new int[source.length];
-    System.arraycopy(source, ARRAY_START, sorted, ARRAY_START, source.length);
-    for (int i = 0; i < length; i++) {
-      for (int j = 0; j < (length - 1); j++) {
-        if (sorted[j] > sorted[j + 1]) {
-          int temporary = sorted[j];
-          sorted[j] = sorted[j + 1];
-          sorted[j + 1] = temporary;
-        }
-      }
-    }
+    // TODO:Implement appropriate sorting algorithm
     return sorted;
   }
 
   /** Demonstrate the use of the BubbleSort algorithm. */
-  public static void main(String[] args) {
-    char[] letters = {'C', 'E', 'B', 'D', 'A', 'I', 'J', 'L', 'K', 'H', 'G', 'F'};
-    System.out.println("Before: " + java.util.Arrays.toString(letters));
-    char[] sortedLetters = (new BubbleSort()).sort(letters);
-    System.out.println("After : " + java.util.Arrays.toString(sortedLetters));
-    int[] numbers = {1, 2, 4, 4, 9, 10, -10, 3, 8, 7, 20, 0};
-    System.out.println("Before: " + java.util.Arrays.toString(numbers));
-    int[] sortedNumbers = (new BubbleSort()).sort(numbers);
-    System.out.println("After : " + java.util.Arrays.toString(sortedNumbers));
-  }
+  // public static void main(String[] args) {
+  //   char[] letters = {'C', 'E', 'B', 'D', 'A', 'I', 'J', 'L', 'K', 'H', 'G', 'F'};
+  //   System.out.println("Before: " + java.util.Arrays.toString(letters));
+  //   char[] sortedLetters = (new SelectionSort()).sort(letters);
+  //   System.out.println("After : " + java.util.Arrays.toString(sortedLetters));
+  //   int[] numbers = {1, 2, 4, 4, 9, 10, -10, 3, 8, 7, 20, 0};
+  //   System.out.println("Before: " + java.util.Arrays.toString(numbers));
+  //   int[] sortedNumbers = (new SelectionSort()).sort(numbers);
+  //   System.out.println("After : " + java.util.Arrays.toString(sortedNumbers));
+  // }
 }
