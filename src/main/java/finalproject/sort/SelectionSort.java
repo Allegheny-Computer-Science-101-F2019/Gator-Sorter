@@ -23,10 +23,6 @@ public class SelectionSort extends Sorter {
    * @return the copied and sorted array in a nondecreasing order
    */
   public char[] sort(char[] source) {
-    int length = source.length;
-    char[] sorted = new char[source.length];
-    // TODO:Implement appropriate sorting algorithm
-    return sorted;
     int n = source.length;
     // One by one move boundary of unsorted subarray
     for (int i = 0; i < n-1; i++)
@@ -58,10 +54,6 @@ public class SelectionSort extends Sorter {
    * @return the copied and sorted array in a nondecreasing order
    */
   public int[] sort(int[] source) {
-    int length = source.length;
-    int[] sorted = new int[source.length];
-    // TODO:Implement appropriate sorting algorithm
-    return sorted;
     int n = source.length;
     // One by one move boundary of unsorted subarray
     for (int i = 0; i < n-1; i++)
