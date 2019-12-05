@@ -4,7 +4,7 @@ import finalproject.sort.BubbleSort;
 import finalproject.sort.InsertionSort;
 import finalproject.sort.SelectionSort;
 import finalproject.sort.Sorter;
-import java.util.*;
+import java.util.Scanner;
 
 // Done: Add all of the needed comments to this file
 /**
@@ -23,7 +23,8 @@ public class MainApp {
   public static void main(String[] args) {
     Scanner userInput = new Scanner(System.in);
     System.out.println("Please enter the size of the data structure to be generated");
-    int DataSize = userInput.nextInt();
+    int dataSize = userInput.nextInt();
+    System.out.println(dataSize);
   }
 
 }
