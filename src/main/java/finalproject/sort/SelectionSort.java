@@ -53,7 +53,22 @@ public class SelectionSort extends Sorter {
    * @return the copied and sorted array in a nondecreasing order
    */
   public int[] sort(int[] source) {
-    
+    int length = source.length;
+    int[] sorted = new int[source.length];
+    // TODO:Implement appropriate sorting algorithm
+    // System.arraycopy(source, 0, sorted, 0, source.length);
+    for (int i = 0; i < length; i++){
+      int min_index = i;
+      for (int j = i+1; j < length; j++){
+        if (source[j] > source[min_index]){
+          min_index = j;
+        }
+      }
+      int temp = source[min_index];
+      source[min_index] = source[i];
+      source[i] = temp;
+    }
+    return sorted;
   }
 
   /** Demonstrate the use of the BubbleSort algorithm. */
