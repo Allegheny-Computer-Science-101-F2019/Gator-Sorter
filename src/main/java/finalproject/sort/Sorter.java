@@ -33,12 +33,11 @@ public abstract class Sorter {
   /** TODO: add a Sorter and Timer method */
   public long sortToTime(int[] source) {
     long startTime = System.currentTimeMillis();
-    source.sort();
+    sort(source);
     long endTime = System.currentTimeMillis();
     long elapsed = endTime - startTime;
     return elapsed;
   }
 
   /** TODO: add a Sorter and Explain method */
-
 }
