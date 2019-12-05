@@ -22,12 +22,24 @@ public class SelectionSort extends Sorter {
    * @param source the source array that will be copied and sorted
    * @return the copied and sorted array in a nondecreasing order
    */
-  public char[] sort(char[] source) {
-    int length = source.length;
-    char[] sorted = new char[source.length];
-    // TODO:Implement appropriate sorting algorithm
-    return sorted;
-  }
+  // public char[] sort(char[] source) {
+  //   int length = source.length;
+  //   char[] sorted = new char[source.length];
+  //   // TODO: Double check the sorting algorithm below for errors
+  //   System.arraycopy(source, 0, sorted, 0, source.length);
+  //   for (int i = 0; i < length; i++){
+  //     int min_index = i;
+  //     for (int j = i+1; j < length; j++){
+  //       if (source[j] > source[min_index]){
+  //         min_index = j;
+  //       }
+  //     }
+  //     int temp = source[min_index];
+  //     source[min_index] = source[i];
+  //     source[i] = temp;
+  //   }
+  //   return sorted;
+  // }
 
   /** Bubble-sort of an array of ints into a nondecreasing order. This
    * implementation of the sort method makes a complete copy of the input array,
@@ -44,6 +56,18 @@ public class SelectionSort extends Sorter {
     int length = source.length;
     int[] sorted = new int[source.length];
     // TODO:Implement appropriate sorting algorithm
+    // System.arraycopy(source, 0, sorted, 0, source.length);
+    for (int i = 0; i < length; i++){
+      int min_index = i;
+      for (int j = i+1; j < length; j++){
+        if (source[j] > source[min_index]){
+          min_index = j;
+        }
+      }
+      int temp = source[min_index];
+      source[min_index] = source[i];
+      source[i] = temp;
+    }
     return sorted;
   }
 
