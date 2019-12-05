@@ -38,7 +38,7 @@ public class MainApp {
       testarray[i] = rnd2;
     }
     System.out.println("Please enter which sorting algorithm you wish to use:\n");
-    System.out.println("For BubbleSort press 1");
+    System.out.println("For BubbleSort press 1 ");
     System.out.println("For InsertionSort press 2");
     System.out.println("For SelectionSort press 3\n");
     int sortselect = userInput.nextInt();
