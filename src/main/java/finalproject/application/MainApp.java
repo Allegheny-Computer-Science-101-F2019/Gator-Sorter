@@ -1,9 +1,10 @@
-package finalProject.application;
+package finalproject.application;
 
-import finalProject.sort.BubbleSort;
-import finalProject.sort.InsertionSort;
-import finalProject.sort.SelectionSort;
-import finalProject.sort.Sorter;
+import finalproject.sort.BubbleSort;
+import finalproject.sort.InsertionSort;
+import finalproject.sort.SelectionSort;
+import finalproject.sort.Sorter;
+import java.util.*;
 
 // Done: Add all of the needed comments to this file
 /**
@@ -20,7 +21,9 @@ public class MainApp {
    * output.
    */
   public static void main(String[] args) {
-    
+    Scanner userInput = new Scanner(System.in);
+    System.out.println("Please enter the size of the data structure to be generated");
+    int DataSize = userInput.nextInt();
   }
 
 }

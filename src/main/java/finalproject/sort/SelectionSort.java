@@ -1,4 +1,4 @@
-package finalProject.sort;
+package finalproject.sort;
 
 
 public class SelectionSort extends Sorter {

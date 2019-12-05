@@ -1,4 +1,4 @@
-package finalProject.sort;
+package finalproject.sort;
 
 /**
  * An implementation of the BubbleSort sorting algorithm.

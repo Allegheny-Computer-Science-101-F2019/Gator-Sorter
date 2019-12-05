@@ -1,4 +1,4 @@
-package finalProject.sort;
+package finalproject.sort;
 
 /*
  * Copyright 2014, Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser
@@ -34,6 +34,7 @@ public class InsertionSort extends Sorter {
   /** Define the name of this sorting algorithm. */
   public InsertionSort() {
     // TODO: Define the name to be InsertionSort
+    name = "InsertionSort";
   }
 
   /** Insertion-sort of an array of chars into a nondecreasing order. This
