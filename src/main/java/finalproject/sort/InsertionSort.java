@@ -36,7 +36,7 @@ public class InsertionSort extends Sorter {
     // TODO: Define the name to be InsertionSort
     name = "InsertionSort";
   }
-
+  // TODO: organize comments accordingly and ensure style
   /** Insertion-sort of an array of chars into a nondecreasing order. This
    * implementation of the sort method makes a complete copy of the input array,
    * thus ensuring that it does not modify the input parameter.
@@ -91,6 +91,10 @@ public class InsertionSort extends Sorter {
     return sorted;
   }
 
+  // TODO: Add javadoc comments for displayInfo method
+  public void displayInfo() {
+    // TODO: add info
+  }
   /** Demonstrate the use of the InsertionSort algorithm. */
   // public static void main(String[] args) {
   //   char[] letters = {'C', 'E', 'B', 'D', 'A', 'I', 'J', 'L', 'K', 'H', 'G', 'F'};
