@@ -1,5 +1,6 @@
 package finalproject.sort;
 
+import java.util.Arrays;
 /**
  * An interface for all of the sorting implementations.
  *
@@ -30,18 +31,37 @@ public abstract class Sorter {
   /** Require that a Sorter provide a method for int[] arrays. */
   public abstract int[] sort(int[] source);
 
+/** Require that a Sorter provide an efficient sorter method for int[] arrays without print statements. */
+  public abstract int[] efficientSort(int[] source);
+
   /** Require that the sorter provides a method to explain its properties. */
   public abstract void displayInfo();
 
-  /** TODO: add a Sorter and Timer method */
+  /** Done: add a Sorter and Timer method */
   public long sortToTime(int[] source) {
     long startTime = System.nanoTime();
-    sort(source);
+    efficientSort(source);
     long endTime = System.nanoTime();
     long elapsed = endTime - startTime;
     return elapsed;
   }
 
-  /** TODO: add a Sorter and Explain method */
+  public static void printWithSymbol(int[] source, int selectedIndex, String symbol, int counter) {
+    String[] stringArray = new String[source.length];
+    if (counter < 6) {
+      for (int i = 0; i < source.length; i++) {
+        if (i == selectedIndex) {
+          stringArray[i] = symbol + Integer.toString(source[i]);
+        } else {
+          stringArray[i] = Integer.toString(source[i]);
+        }
+      }
+      System.out.println(Arrays.toString(stringArray));
+      System.out.println();
+    } else {
+      //System.out.println("counter over limit");
+    }
+  }
+  /** TODO: add a Sorter and Explain method  */
 
 }

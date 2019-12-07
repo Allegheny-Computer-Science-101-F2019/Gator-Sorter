@@ -75,7 +75,23 @@ public class InsertionSort extends Sorter {
    * @param source the source array that will be copied and sorted
    * @return the copied and sorted array in a nondecreasing order
    */
-  public int[] sort(int[] source) {
+  public int[] sort(int[] source) { // TODO will include calls to printWithSymbol
+    int length = source.length;
+    int[] sorted = new int[source.length];
+    System.arraycopy(source, 0, sorted, 0, source.length);
+    for (int i = 1; i < length; i++) {
+      int currentValue = sorted[i];
+      int start = i;
+      while (start > 0 && sorted[start - 1] > currentValue) {
+        sorted[start] = sorted[start - 1];
+        start--;
+      }
+      sorted[start] = currentValue;
+    }
+    return sorted;
+  }
+
+  public int[] efficientSort(int[] source) {
     int length = source.length;
     int[] sorted = new int[source.length];
     System.arraycopy(source, 0, sorted, 0, source.length);

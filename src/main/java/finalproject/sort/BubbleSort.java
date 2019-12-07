@@ -55,7 +55,23 @@ public class BubbleSort extends Sorter {
    * @param source the source array that will be copied and sorted
    * @return the copied and sorted array in a nondecreasing order
    */
-  public int[] sort(int[] source) {
+  public int[] sort(int[] source) { // TODO will include calls to printWithSymbol
+    int length = source.length;
+    int[] sorted = new int[source.length];
+    System.arraycopy(source, ARRAY_START, sorted, ARRAY_START, source.length);
+    for (int i = 0; i < length; i++) {
+      for (int j = 0; j < (length - 1); j++) {
+        if (sorted[j] > sorted[j + 1]) {
+          int temporary = sorted[j];
+          sorted[j] = sorted[j + 1];
+          sorted[j + 1] = temporary;
+        }
+      }
+    }
+    return sorted;
+  }
+
+  public int[] efficientSort(int[] source) {
     int length = source.length;
     int[] sorted = new int[source.length];
     System.arraycopy(source, ARRAY_START, sorted, ARRAY_START, source.length);

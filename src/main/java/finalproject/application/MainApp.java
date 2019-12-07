@@ -83,7 +83,7 @@ public class MainApp {
       System.out.println("You selected the SelectionSort");
       selectionSorter.sort(originalArray);
       System.out.println("Time taken to sort using " + selectionSorter.getName() + ": " + selectionSorter.sortToTime(copiedArray) + " nanoseconds");
-      // selectionSorter.displayInfo();
+      selectionSorter.displayInfo();
     }
     // else {
     //   System.out.println("Error: Number entered is not a valid choice");

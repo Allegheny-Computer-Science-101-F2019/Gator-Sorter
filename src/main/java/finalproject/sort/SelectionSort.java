@@ -1,5 +1,6 @@
 package finalproject.sort;
 
+import java.util.Arrays;
 
 public class SelectionSort extends Sorter {
 
@@ -54,18 +55,50 @@ public class SelectionSort extends Sorter {
    * @return the copied and sorted array in a nondecreasing order
    */
   public int[] sort(int[] source) {
+    int printingCounter = 0;
     int n = source.length;
     // One by one move boundary of unsorted subarray
-    for (int i = 0; i < n-1; i++)
-    {
+    for (int i = 0; i < n-1; i++) {
         // Find the minimum element in unsorted array
         int min_idx = i;
-        for (int j = i+1; j < n; j++)
-            if (source[j] < source[min_idx])
-                min_idx = j;
-
+        printWithSymbol(source, i, "current index>", printingCounter); // WARNING causes issues with timing
+        printingCounter = printingCounter + 1;
+        for (int j = i+1; j < n; j++) {
+          if (source[j] < source[min_idx]) { // finds minimum
+            min_idx = j;
+          }
+        }
+        // TODO printWithSymbol (arr source, index min_idx, symbol >, printingCounter) shows where the
+        printWithSymbol(source, min_idx, "found min>", printingCounter);
+        // minimum is after bound
         // Swap the found minimum element with the first
         // element
+        int temp = source[min_idx];
+        source[min_idx] = source[i];
+        source[i] = temp;
+        printWithSymbol(source, i, "values swapped>", printingCounter);
+        printingCounter = printingCounter + 1;
+    }
+    System.out.println();
+    System.out.println("Array sorted:");
+    System.out.println(Arrays.toString(source));
+    System.out.println();
+    return source;
+  }
+
+  /** efficientSort is intended to mimimize time and is only called by timing method */
+  public int[] efficientSort(int[] source) {
+    int n = source.length;
+    // One by one move boundary of unsorted subarray
+    for (int i = 0; i < n-1; i++) {
+        // Find the minimum element in unsorted array
+        int min_idx = i;
+        for (int j = i+1; j < n; j++) {
+          if (source[j] < source[min_idx]) { // finds minimum
+            min_idx = j;
+          }
+        }
+        // Swap the found minimum element with the first element
         int temp = source[min_idx];
         source[min_idx] = source[i];
         source[i] = temp;
@@ -75,7 +108,15 @@ public class SelectionSort extends Sorter {
 
   // TODO: Add javadoc comments for displayInfo method
   public void displayInfo() {
-    // TODO: add info
+    // Done: add info
+    System.out.println();
+    System.out.println("The selection sort algorithm sorts an array by repeatedly finding the minimum element from unsorted part and putting it at the beginning.");
+    System.out.println();
+    System.out.println("The algorithm maintains two subarrays in a given array. The subarray which is already sorted and subarray which is unsorted.");
+    System.out.println();
+    System.out.println("In every iteration of selection sort, the minimum element from the unsorted subarray is picked and moved to the sorted subarray.");
+    System.out.println();
+    System.out.println("Worst case time complexity of SelectionSort is O(n^2)");
   }
   /** Demonstrate the use of the BubbleSort algorithm. */
   // public static void main(String[] args) {
