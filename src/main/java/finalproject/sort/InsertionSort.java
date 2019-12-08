@@ -1,5 +1,7 @@
 package finalproject.sort;
 
+import java.util.Arrays;
+
 /*
  * Copyright 2014, Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser
  *
@@ -92,8 +94,12 @@ public class InsertionSort extends Sorter {
       }
       sorted[start] = currentValue;
       printWithSymbol(sorted, start, "CORRECT VALUE INSERTED =>", printingCounter);
-      printingCounter = printingCounter + 2;
+      printingCounter = printingCounter + 3;
     }
+    System.out.println();
+    System.out.println("Array sorted:");
+    System.out.println(Arrays.toString(sorted));
+    System.out.println();
     return sorted;
   }
 
@@ -115,7 +121,14 @@ public class InsertionSort extends Sorter {
 
   // TODO: Add javadoc comments for displayInfo method
   public void displayInfo() {
-    // TODO: add info
+    System.out.println();
+    System.out.println("The insertion sort algorithm sorts an array by repeatedly comparing the current element to previous ones.");
+    System.out.println();
+    System.out.println("The algorithm inserts the current element in the spot where the previous element is less than the current one.");
+    System.out.println();
+    System.out.println("Space is created for it by shifting the other elements one position to the right and inserting the element at the suitable position.");
+    System.out.println();
+    System.out.println("Worst case time complexity of SelectionSort is O(n^2)");
   }
   /** Demonstrate the use of the InsertionSort algorithm. */
   // public static void main(String[] args) {

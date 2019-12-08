@@ -81,6 +81,10 @@ public class BubbleSort extends Sorter {
         }
       }
     }
+    System.out.println();
+    System.out.println("Array sorted:");
+    System.out.println(Arrays.toString(sorted));
+    System.out.println();
     return sorted;
   }
 

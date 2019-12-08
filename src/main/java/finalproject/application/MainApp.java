@@ -78,7 +78,7 @@ public class MainApp {
       insertionSorter.sort(originalArray);
       System.out.println();
       System.out.println("Time taken to sort using " + insertionSorter.getName() + ": " + insertionSorter.sortToTime(copiedArray) + " nanoseconds");
-      // insertionSorter.displayInfo();
+      insertionSorter.displayInfo();
     } else if (sortselect == 3) {
       //SelectionSort
       SelectionSort selectionSorter = new SelectionSort();

@@ -55,55 +55,59 @@ public class SelectionSort extends Sorter {
    * @return the copied and sorted array in a nondecreasing order
    */
   public int[] sort(int[] source) {
+    int[] sorted = new int[source.length];
+    System.arraycopy(source, ARRAY_START, sorted, ARRAY_START, source.length);
     int printingCounter = 0;
     int n = source.length;
     // One by one move boundary of unsorted subarray
     for (int i = 0; i < n-1; i++) {
         // Find the minimum element in unsorted array
         int min_idx = i;
-        printWithSymbol(source, i, "CURRENT INDEX =>", printingCounter);
+        printWithSymbol(sorted, i, "CURRENT INDEX =>", printingCounter);
         printingCounter = printingCounter + 1;
         for (int j = i+1; j < n; j++) {
-          if (source[j] < source[min_idx]) { // finds minimum
+          if (sorted[j] < sorted[min_idx]) { // finds minimum
             min_idx = j;
           }
         }
         // TODO printWithSymbol (arr source, index min_idx, symbol >, printingCounter) shows where the
-        printWithSymbol(source, min_idx, "FOUND MIN =>", printingCounter);
+        printWithSymbol(sorted, min_idx, "FOUND MIN =>", printingCounter);
         // minimum is after bound
         // Swap the found minimum element with the first
         // element
-        int temp = source[min_idx];
-        source[min_idx] = source[i];
-        source[i] = temp;
-        printWithSymbol(source, i, "VALUES SWAPPED =>", printingCounter);
+        int temp = sorted[min_idx];
+        sorted[min_idx] = sorted[i];
+        sorted[i] = temp;
+        printWithSymbol(sorted, i, "VALUES SWAPPED =>", printingCounter);
         printingCounter = printingCounter + 1;
     }
     System.out.println();
     System.out.println("Array sorted:");
-    System.out.println(Arrays.toString(source));
+    System.out.println(Arrays.toString(sorted));
     System.out.println();
-    return source;
+    return sorted;
   }
 
   /** efficientSort is intended to mimimize time and is only called by timing method */
   public int[] efficientSort(int[] source) {
+    int[] sorted = new int[source.length];
+    System.arraycopy(source, ARRAY_START, sorted, ARRAY_START, source.length);
     int n = source.length;
     // One by one move boundary of unsorted subarray
     for (int i = 0; i < n-1; i++) {
         // Find the minimum element in unsorted array
         int min_idx = i;
         for (int j = i+1; j < n; j++) {
-          if (source[j] < source[min_idx]) { // finds minimum
+          if (sorted[j] < sorted[min_idx]) { // finds minimum
             min_idx = j;
           }
         }
         // Swap the found minimum element with the first element
-        int temp = source[min_idx];
-        source[min_idx] = source[i];
-        source[i] = temp;
+        int temp = sorted[min_idx];
+        sorted[min_idx] = sorted[i];
+        sorted[i] = temp;
     }
-    return source;
+    return sorted;
   }
 
   // TODO: Add javadoc comments for displayInfo method
