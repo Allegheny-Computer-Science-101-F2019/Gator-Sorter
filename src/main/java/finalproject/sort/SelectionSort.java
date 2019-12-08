@@ -61,7 +61,7 @@ public class SelectionSort extends Sorter {
     for (int i = 0; i < n-1; i++) {
         // Find the minimum element in unsorted array
         int min_idx = i;
-        printWithSymbol(source, i, "current index>", printingCounter); 
+        printWithSymbol(source, i, "CURRENT INDEX =>", printingCounter);
         printingCounter = printingCounter + 1;
         for (int j = i+1; j < n; j++) {
           if (source[j] < source[min_idx]) { // finds minimum
@@ -69,14 +69,14 @@ public class SelectionSort extends Sorter {
           }
         }
         // TODO printWithSymbol (arr source, index min_idx, symbol >, printingCounter) shows where the
-        printWithSymbol(source, min_idx, "found min>", printingCounter);
+        printWithSymbol(source, min_idx, "FOUND MIN =>", printingCounter);
         // minimum is after bound
         // Swap the found minimum element with the first
         // element
         int temp = source[min_idx];
         source[min_idx] = source[i];
         source[i] = temp;
-        printWithSymbol(source, i, "values swapped>", printingCounter);
+        printWithSymbol(source, i, "VALUES SWAPPED =>", printingCounter);
         printingCounter = printingCounter + 1;
     }
     System.out.println();
