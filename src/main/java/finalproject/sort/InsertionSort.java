@@ -79,14 +79,20 @@ public class InsertionSort extends Sorter {
     int length = source.length;
     int[] sorted = new int[source.length];
     System.arraycopy(source, 0, sorted, 0, source.length);
+    int printingCounter = 0;
     for (int i = 1; i < length; i++) {
       int currentValue = sorted[i];
       int start = i;
+      printWithSymbol(sorted, start, "CURRENT BOUND =>", printingCounter);
       while (start > 0 && sorted[start - 1] > currentValue) {
+        printWithSymbol(sorted, start - 1, "BIGGER PREVIOUS VALUE =>", printingCounter);
         sorted[start] = sorted[start - 1];
+        printWithSymbol(sorted, start, "VALUE COPIED =>", printingCounter);
         start--;
       }
       sorted[start] = currentValue;
+      printWithSymbol(sorted, start, "CORRECT VALUE INSERTED =>", printingCounter);
+      printingCounter = printingCounter + 2;
     }
     return sorted;
   }

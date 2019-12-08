@@ -1,5 +1,7 @@
 package finalproject.sort;
 
+import java.util.Arrays;
+
 /**
  * An implementation of the BubbleSort sorting algorithm.
  *
@@ -59,12 +61,20 @@ public class BubbleSort extends Sorter {
     int length = source.length;
     int[] sorted = new int[source.length];
     System.arraycopy(source, ARRAY_START, sorted, ARRAY_START, source.length);
+    int iterationCounter = 0;
     for (int i = 0; i < length; i++) {
+      iterationCounter = i;
+      if (iterationCounter <= 1 || iterationCounter == sorted.length - 1) {
+        System.out.println("Current iteration: " + iterationCounter);
+      }
       for (int j = 0; j < (length - 1); j++) {
+        printWithSymbol(sorted, j, "CURRENT PAIR => [", iterationCounter);
         if (sorted[j] > sorted[j + 1]) {
+          printWithSymbol(sorted, j, "PAIR NOT IN ORDER => [", iterationCounter);
           int temporary = sorted[j];
           sorted[j] = sorted[j + 1];
           sorted[j + 1] = temporary;
+          printWithSymbol(sorted, j, "VALUES SWAPPED => [", iterationCounter);
         }
       }
     }
@@ -85,6 +95,25 @@ public class BubbleSort extends Sorter {
       }
     }
     return sorted;
+  }
+
+  public static void printWithSymbol(int[] source, int selectedIndex, String symbol, int counter) {
+    String[] stringArray = new String[source.length];
+    if (counter <= 1 || counter == source.length - 1) {
+      for (int i = 0; i < source.length; i++) {
+        if (i == selectedIndex) {
+          stringArray[i] = symbol + Integer.toString(source[i]);
+        } else if (i == selectedIndex + 1) {
+          stringArray[i] = Integer.toString(source[i]) + "]";
+        } else {
+          stringArray[i] = Integer.toString(source[i]);
+        }
+      }
+      System.out.println(Arrays.toString(stringArray));
+      System.out.println();
+    } else {
+      //System.out.println("counter over limit");
+    }
   }
 
   // TODO: Add javadoc comments for displayInfo method

@@ -48,7 +48,7 @@ public abstract class Sorter {
 
   public static void printWithSymbol(int[] source, int selectedIndex, String symbol, int counter) {
     String[] stringArray = new String[source.length];
-    if (counter < 6) {
+    if (counter <= 6) {
       for (int i = 0; i < source.length; i++) {
         if (i == selectedIndex) {
           stringArray[i] = symbol + Integer.toString(source[i]);
