@@ -65,7 +65,10 @@ public class BubbleSort extends Sorter {
     for (int i = 0; i < length; i++) {
       iterationCounter = i;
       if (iterationCounter <= 1 || iterationCounter == sorted.length - 1) {
+        System.out.println();
+        System.out.println();
         System.out.println("Current iteration: " + iterationCounter);
+        System.out.println();
       }
       for (int j = 0; j < (length - 1); j++) {
         printWithSymbol(sorted, j, "CURRENT PAIR => [", iterationCounter);
@@ -110,7 +113,6 @@ public class BubbleSort extends Sorter {
         }
       }
       System.out.println(Arrays.toString(stringArray));
-      System.out.println();
     } else {
       //System.out.println("counter over limit");
     }
@@ -118,7 +120,14 @@ public class BubbleSort extends Sorter {
 
   // TODO: Add javadoc comments for displayInfo method
   public void displayInfo() {
-    // TODO: add info
+    System.out.println();
+    System.out.println("The bubble sort algorithm sorts an array by repeatedly swapping the adjacent elements, the 'bubble', if they are in wrong order.");
+    System.out.println();
+    System.out.println("The algorithm compares the first two elements and swaps them if they are in the wrong order. The 'bubble' shifts one index over and reapets the process until the pass is complete.");
+    System.out.println();
+    System.out.println("Once it is sorted correctly, the algorithm needs one more complete pass in order to confirm that the array is sorted.");
+    System.out.println();
+    System.out.println("Worst case time complexity of SelectionSort is O(n^2)");
   }
   /** Demonstrate the use of the BubbleSort algorithm. */
   // public static void main(String[] args) {

@@ -68,13 +68,15 @@ public class MainApp {
       BubbleSort bubbleSorter = new BubbleSort();
       System.out.println("You selected the BubbleSort");
       bubbleSorter.sort(originalArray);
+      System.out.println();
       System.out.println("Time taken to sort using " + bubbleSorter.getName() + ": " + bubbleSorter.sortToTime(copiedArray) + " nanoseconds");
-      // bubbleSorter.displayInfo();
+      bubbleSorter.displayInfo();
     } else if (sortselect == 2) {
       //InsertionSort
       InsertionSort insertionSorter = new InsertionSort();
       System.out.println("You selected the InsertionSort");
       insertionSorter.sort(originalArray);
+      System.out.println();
       System.out.println("Time taken to sort using " + insertionSorter.getName() + ": " + insertionSorter.sortToTime(copiedArray) + " nanoseconds");
       // insertionSorter.displayInfo();
     } else if (sortselect == 3) {
@@ -82,6 +84,7 @@ public class MainApp {
       SelectionSort selectionSorter = new SelectionSort();
       System.out.println("You selected the SelectionSort");
       selectionSorter.sort(originalArray);
+      System.out.println();
       System.out.println("Time taken to sort using " + selectionSorter.getName() + ": " + selectionSorter.sortToTime(copiedArray) + " nanoseconds");
       selectionSorter.displayInfo();
     }
