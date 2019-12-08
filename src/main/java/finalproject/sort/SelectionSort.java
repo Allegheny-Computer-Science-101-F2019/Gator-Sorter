@@ -61,7 +61,7 @@ public class SelectionSort extends Sorter {
     for (int i = 0; i < n-1; i++) {
         // Find the minimum element in unsorted array
         int min_idx = i;
-        printWithSymbol(source, i, "current index>", printingCounter); // WARNING causes issues with timing
+        printWithSymbol(source, i, "current index>", printingCounter); 
         printingCounter = printingCounter + 1;
         for (int j = i+1; j < n; j++) {
           if (source[j] < source[min_idx]) { // finds minimum
