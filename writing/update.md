@@ -1,4 +1,4 @@
-# Status Update by Team 5
+# Status Update by Declan Casey, Noor Buchi, Pedro Carmo, Nolan Thompson
 
 ## Description of the work already completed
 So far 5 different classes have been created; MainApp, BubbleSort, InsertionSort, SelectionSort, and Sorter. The BubbleSort, Sorter, and InsertionSort classes have been fully implemented and seem to be functioning correctly. The MainApp class has been implemented but is not functioning completely yet, as we are having trouble getting it to interact with gradle and the other classes properly. After a little bit of looking over the code we were able to get an array sent to the BubbleSort and have it sorted correctly. The SelectionSort class has not been implemented yet, but that is currently in progress and should be completed soon.
