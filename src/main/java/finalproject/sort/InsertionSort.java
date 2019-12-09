@@ -103,6 +103,11 @@ public class InsertionSort extends Sorter {
     return sorted;
   }
 
+  /**
+  * This method is intended to sort an array without any println statements.
+  * It will be used to time sorting and ensure an accurate timing when called.
+  */
+
   public int[] efficientSort(int[] source) {
     int length = source.length;
     int[] sorted = new int[source.length];
@@ -119,7 +124,11 @@ public class InsertionSort extends Sorter {
     return sorted;
   }
 
-  // TODO: Add javadoc comments for displayInfo method
+  /**
+  * This method contains println statements that display information about.
+  * the sorting method.
+  */
+  
   public void displayInfo() {
     System.out.println();
     System.out.println("The insertion sort algorithm sorts an array by repeatedly comparing the current element to previous ones.");

@@ -31,7 +31,7 @@ public abstract class Sorter {
   /** Require that a Sorter provide a method for int[] arrays. */
   public abstract int[] sort(int[] source);
 
-/** Require that a Sorter provide an efficient sorter method for int[] arrays without print statements. */
+  /** Require that a Sorter provide an efficient sorter method for int[] arrays without print statements. */
   public abstract int[] efficientSort(int[] source);
 
   /** Require that the sorter provides a method to explain its properties. */
@@ -45,6 +45,11 @@ public abstract class Sorter {
     long elapsed = endTime - startTime;
     return elapsed;
   }
+
+  /**
+  * This method adds a string at a specified index of an array.
+  * It is used to facilitate the explanation of the sorting process.
+  */
 
   public static void printWithSymbol(int[] source, int selectedIndex, String symbol, int counter) {
     String[] stringArray = new String[source.length];

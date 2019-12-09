@@ -110,7 +110,11 @@ public class SelectionSort extends Sorter {
     return sorted;
   }
 
-  // TODO: Add javadoc comments for displayInfo method
+  /**
+  * This method contains println statements that display information about.
+  * the sorting method.
+  */
+  
   public void displayInfo() {
     // Done: add info
     System.out.println();

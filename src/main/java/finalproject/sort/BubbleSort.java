@@ -30,6 +30,7 @@ public class BubbleSort extends Sorter {
    * @param source the source array that will be copied and sorted
    * @return the copied and sorted array in a nondecreasing order
    */
+
   public char[] sort(char[] source) {
     int length = source.length;
     char[] sorted = new char[source.length];
@@ -88,6 +89,11 @@ public class BubbleSort extends Sorter {
     return sorted;
   }
 
+  /**
+  * This method is intended to sort an array without any println statements.
+  * It will be used to time sorting and ensure an accurate timing when called.
+  */
+
   public int[] efficientSort(int[] source) {
     int length = source.length;
     int[] sorted = new int[source.length];
@@ -103,6 +109,11 @@ public class BubbleSort extends Sorter {
     }
     return sorted;
   }
+
+  /**
+  * This method adds a string at a specified index of an array.
+  * It is used to facilitate the explanation of the sorting process.
+  */
 
   public static void printWithSymbol(int[] source, int selectedIndex, String symbol, int counter) {
     String[] stringArray = new String[source.length];
@@ -122,16 +133,26 @@ public class BubbleSort extends Sorter {
     }
   }
 
-  // TODO: Add javadoc comments for displayInfo method
+  /**
+  * This method contains println statements that display information about.
+  * the sorting method.
+  */
+
   public void displayInfo() {
     System.out.println();
-    System.out.println("The bubble sort algorithm sorts an array by repeatedly swapping the adjacent elements, the 'bubble', if they are in wrong order.");
+    System.out.println(
+        "The bubble sort algorithm sorts an array by repeatedly by swapping "
+        + "the adjacent elements, the 'bubble', if they are in wrong order.");
     System.out.println();
-    System.out.println("The algorithm compares the first two elements and swaps them if they are in the wrong order. The 'bubble' shifts one index over and reapets the process until the pass is complete.");
+    System.out.println("The algorithm compares the first two elements and "
+        + "swaps them if they are in the wrong order. The 'bubble' shifts one "
+        + "index over and reapets the process until the pass is complete.");
     System.out.println();
-    System.out.println("Once it is sorted correctly, the algorithm needs one more complete pass in order to confirm that the array is sorted.");
+    System.out.println("Once it is sorted correctly, the algorithm needs "
+        + "one more complete pass in order to confirm that the array is sorted.");
     System.out.println();
-    System.out.println("Worst case time complexity of SelectionSort is O(n^2)");
+    System.out.println(
+        "Worst case time complexity of SelectionSort is O(n^2)");
   }
   /** Demonstrate the use of the BubbleSort algorithm. */
   // public static void main(String[] args) {
