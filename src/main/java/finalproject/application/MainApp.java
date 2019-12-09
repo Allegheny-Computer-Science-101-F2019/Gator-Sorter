@@ -4,8 +4,11 @@ import finalproject.sort.BubbleSort;
 import finalproject.sort.InsertionSort;
 import finalproject.sort.SelectionSort;
 import finalproject.sort.Sorter;
+
 import java.util.Arrays;
+
 import java.util.Random;
+
 import java.util.Scanner;
 
 // Done: Add all of the needed comments to this file
@@ -17,6 +20,10 @@ import java.util.Scanner;
  */
 public class MainApp {
 
+  /**
+   * This method generates an array with random numbers between 0 and 99.
+   * The size of the array depends on the argument requestedSize.
+   */
   public static int[] generateRandomArray(int requestedSize) {
     Random valueGenerator = new Random();
     int[] filledArray = new int[requestedSize];
@@ -35,12 +42,15 @@ public class MainApp {
   public static void main(String[] args) {
     System.out.println("Welcome to GatorSorter!");
     System.out.println();
-    System.out.println("This program will help you learn about some basic sorting algorithms");
+    System.out.println(
+        "This program will help you learn about some basic sorting algorithms");
     System.out.println();
     Scanner userInput = new Scanner(System.in);
     int dataSize = 0;
     while (dataSize < 5 || dataSize > 20) {
-      System.out.println("Please enter the size of the data structure to be generated (Size must be between 5 and 20)");
+      System.out.println(
+          "Please enter the size of the data structure to be generated ");
+      System.out.print("(Size must be between 5 and 20)");
       dataSize = userInput.nextInt();
     }
     // int dataSize = userInput.nextInt();
@@ -69,7 +79,8 @@ public class MainApp {
       System.out.println("You selected the BubbleSort");
       bubbleSorter.sort(originalArray);
       System.out.println();
-      System.out.println("Time taken to sort using " + bubbleSorter.getName() + ": " + bubbleSorter.sortToTime(copiedArray) + " nanoseconds");
+      System.out.println("Time taken to sort using " + bubbleSorter.getName()
+                + ": " + bubbleSorter.sortToTime(copiedArray) + " nanoseconds");
       bubbleSorter.displayInfo();
     } else if (sortselect == 2) {
       //InsertionSort
@@ -77,7 +88,8 @@ public class MainApp {
       System.out.println("You selected the InsertionSort");
       insertionSorter.sort(originalArray);
       System.out.println();
-      System.out.println("Time taken to sort using " + insertionSorter.getName() + ": " + insertionSorter.sortToTime(copiedArray) + " nanoseconds");
+      System.out.println("Time taken to sort using " + insertionSorter.getName()
+                + ": " + insertionSorter.sortToTime(copiedArray) + " nanoseconds");
       insertionSorter.displayInfo();
     } else if (sortselect == 3) {
       //SelectionSort
@@ -85,7 +97,8 @@ public class MainApp {
       System.out.println("You selected the SelectionSort");
       selectionSorter.sort(originalArray);
       System.out.println();
-      System.out.println("Time taken to sort using " + selectionSorter.getName() + ": " + selectionSorter.sortToTime(copiedArray) + " nanoseconds");
+      System.out.println("Time taken to sort using " + selectionSorter.getName()
+                + ": " + selectionSorter.sortToTime(copiedArray) + " nanoseconds");
       selectionSorter.displayInfo();
     }
     // else {
