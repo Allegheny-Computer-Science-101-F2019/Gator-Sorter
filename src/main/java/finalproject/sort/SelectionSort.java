@@ -23,22 +23,23 @@ public class SelectionSort extends Sorter {
    * @param source the source array that will be copied and sorted
    * @return the copied and sorted array in a nondecreasing order
    */
-  public char[] sort(char[] source) {
-    int n = source.length;
-    // One by one move boundary of unsorted subarray
-    for (int i = 0; i < n-1; i++)
-    {
-        // Find the minimum element in unsorted array
-        int min_idx = i;
-        for (int j = i+1; j < n; j++)
-            if (source[j] < source[min_idx])
-                min_idx = j;
 
-        // Swap the found minimum element with the first
-        // element
-        char temp = source[min_idx];
-        source[min_idx] = source[i];
-        source[i] = temp;
+  public char[] sort(char[] source) {
+    int currentIndex = source.length;
+    // One by one move boundary of unsorted subarray
+    for (int i = 0; i < currentIndex - 1; i++) {
+      // Find the minimum element in unsorted array
+      int minIndex = i;
+      for (int j = i + 1; j < currentIndex; j++) {
+        if (source[j] < source[minIndex]) {
+          minIndex = j;
+        }
+      }
+      // Swap the found minimum element with the first
+      // element
+      char temp = source[minIndex];
+      source[minIndex] = source[i];
+      source[i] = temp;
     }
     return source;
   }
@@ -58,28 +59,27 @@ public class SelectionSort extends Sorter {
     int[] sorted = new int[source.length];
     System.arraycopy(source, ARRAY_START, sorted, ARRAY_START, source.length);
     int printingCounter = 0;
-    int n = source.length;
+    int arrayLength = source.length;
     // One by one move boundary of unsorted subarray
-    for (int i = 0; i < n-1; i++) {
-        // Find the minimum element in unsorted array
-        int min_idx = i;
-        printWithSymbol(sorted, i, "CURRENT INDEX =>", printingCounter);
-        printingCounter = printingCounter + 1;
-        for (int j = i+1; j < n; j++) {
-          if (sorted[j] < sorted[min_idx]) { // finds minimum
-            min_idx = j;
-          }
+    for (int i = 0; i < arrayLength - 1; i++) {
+      // Find the minimum element in unsorted array
+      int minIndex = i;
+      printWithSymbol(sorted, i, "CURRENT INDEX =>", printingCounter);
+      printingCounter = printingCounter + 1;
+      for (int j = i + 1; j < arrayLength; j++) {
+        if (sorted[j] < sorted[minIndex]) {  // finds minimum
+          minIndex = j;
         }
-        // TODO printWithSymbol (arr source, index min_idx, symbol >, printingCounter) shows where the
-        printWithSymbol(sorted, min_idx, "FOUND MIN =>", printingCounter);
-        // minimum is after bound
-        // Swap the found minimum element with the first
-        // element
-        int temp = sorted[min_idx];
-        sorted[min_idx] = sorted[i];
-        sorted[i] = temp;
-        printWithSymbol(sorted, i, "VALUES SWAPPED =>", printingCounter);
-        printingCounter = printingCounter + 1;
+      }
+      printWithSymbol(sorted, minIndex, "FOUND MIN =>", printingCounter);
+      // minimum is after bound
+      // Swap the found minimum element with the first
+      // element
+      int temp = sorted[minIndex];
+      sorted[minIndex] = sorted[i];
+      sorted[i] = temp;
+      printWithSymbol(sorted, i, "VALUES SWAPPED =>", printingCounter);
+      printingCounter = printingCounter + 1;
     }
     System.out.println();
     System.out.println("Array sorted:");
@@ -88,24 +88,24 @@ public class SelectionSort extends Sorter {
     return sorted;
   }
 
-  /** efficientSort is intended to mimimize time and is only called by timing method */
+  /** efficientSort is intended to mimimize time and is only called by timing method. */
   public int[] efficientSort(int[] source) {
     int[] sorted = new int[source.length];
     System.arraycopy(source, ARRAY_START, sorted, ARRAY_START, source.length);
-    int n = source.length;
+    int arrayLength = source.length;
     // One by one move boundary of unsorted subarray
-    for (int i = 0; i < n-1; i++) {
-        // Find the minimum element in unsorted array
-        int min_idx = i;
-        for (int j = i+1; j < n; j++) {
-          if (sorted[j] < sorted[min_idx]) { // finds minimum
-            min_idx = j;
-          }
+    for (int i = 0; i < arrayLength - 1; i++) {
+      // Find the minimum element in unsorted array
+      int minIndex = i;
+      for (int j = i + 1; j < arrayLength; j++) {
+        if (sorted[j] < sorted[minIndex]) { // finds minimum
+          minIndex = j;
         }
-        // Swap the found minimum element with the first element
-        int temp = sorted[min_idx];
-        sorted[min_idx] = sorted[i];
-        sorted[i] = temp;
+      }
+      // Swap the found minimum element with the first element
+      int temp = sorted[minIndex];
+      sorted[minIndex] = sorted[i];
+      sorted[i] = temp;
     }
     return sorted;
   }
@@ -114,15 +114,18 @@ public class SelectionSort extends Sorter {
   * This method contains println statements that display information about.
   * the sorting method.
   */
-  
+
   public void displayInfo() {
     // Done: add info
     System.out.println();
-    System.out.println("The selection sort algorithm sorts an array by repeatedly finding the minimum element from unsorted part and putting it at the beginning.");
+    System.out.println("The selection sort algorithm sorts an array by repeatedly"
+        + " finding the minimum element from unsorted part and putting it at the beginning.");
     System.out.println();
-    System.out.println("The algorithm maintains two subarrays in a given array. The subarray which is already sorted and subarray which is unsorted.");
+    System.out.println("The algorithm maintains two subarrays in a given array. "
+        + "The subarray which is already sorted and subarray which is unsorted.");
     System.out.println();
-    System.out.println("In every iteration of selection sort, the minimum element from the unsorted subarray is picked and moved to the sorted subarray.");
+    System.out.println("In every iteration of selection sort, the minimum "
+        + "element from the unsorted subarray is picked and moved to the sorted subarray.");
     System.out.println();
     System.out.println("Worst case time complexity of SelectionSort is O(n^2)");
   }
