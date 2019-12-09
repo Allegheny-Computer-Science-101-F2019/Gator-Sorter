@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  * A JUnit test suite for the SelectionSort.
  *
- * @author Gregory M. Kapfhammer
+ * @author Declan Casey, Noor Buchi, Pedro Carmo, Nolan Thompson
  */
 
 public class TestSelectionSort {

@@ -2,6 +2,12 @@ package finalproject.sort;
 
 import java.util.Arrays;
 
+/**
+ * An implementation of the SelectionSort algorithm.
+ *
+ * @author Declan Casey, Noor Buchi, Pedro Carmo, Nolan Thompson
+ */
+
 public class SelectionSort extends Sorter {
 
   /** Define the index at which an array starts. */
@@ -11,47 +17,35 @@ public class SelectionSort extends Sorter {
   public SelectionSort() {
     name = "SelectionSort";
   }
-  // TODO: organize comments accordingly and ensure style
-  /** Bubble-sort of an array of chars into a nondecreasing order. This
-   * implementation of the sort method makes a complete copy of the input array,
-   * thus ensuring that it does not modify the input parameter.
-   *
-   * <p>Please refer to this site:
-   * https://docs.oracle.com/javase/7/docs/api/java/lang/System.html
-   * for more details about the System.arraycopy() method.
-   *
+
+  /** SelectionSort of an array of chars into a nondecreasing order.
    * @param source the source array that will be copied and sorted
    * @return the copied and sorted array in a nondecreasing order
    */
 
   public char[] sort(char[] source) {
-    int currentIndex = source.length;
+    char[] sorted = new char[source.length];
+    System.arraycopy(source, ARRAY_START, sorted, ARRAY_START, source.length);
+    int arrayLength = source.length;
     // One by one move boundary of unsorted subarray
-    for (int i = 0; i < currentIndex - 1; i++) {
+    for (int i = 0; i < arrayLength - 1; i++) {
       // Find the minimum element in unsorted array
       int minIndex = i;
-      for (int j = i + 1; j < currentIndex; j++) {
-        if (source[j] < source[minIndex]) {
+      for (int j = i + 1; j < arrayLength; j++) {
+        if (sorted[j] < sorted[minIndex]) {
           minIndex = j;
         }
       }
       // Swap the found minimum element with the first
       // element
-      char temp = source[minIndex];
-      source[minIndex] = source[i];
-      source[i] = temp;
+      char temp = sorted[minIndex];
+      sorted[minIndex] = sorted[i];
+      sorted[i] = temp;
     }
-    return source;
+    return sorted;
   }
 
-  /** Bubble-sort of an array of ints into a nondecreasing order. This
-   * implementation of the sort method makes a complete copy of the input array,
-   * thus ensuring that it does not modify the input parameter.
-   *
-   * <p>Please refer to this site:
-   * https://docs.oracle.com/javase/7/docs/api/java/lang/System.html
-   * for more details about the System.arraycopy() method.
-   *
+  /** SelectionSort of an array of ints into a nondecreasing order.
    * @param source the source array that will be copied and sorted
    * @return the copied and sorted array in a nondecreasing order
    */
@@ -116,7 +110,6 @@ public class SelectionSort extends Sorter {
   */
 
   public void displayInfo() {
-    // Done: add info
     System.out.println();
     System.out.println("The selection sort algorithm sorts an array by repeatedly"
         + " finding the minimum element from unsorted part and putting it at the beginning.");
@@ -129,15 +122,4 @@ public class SelectionSort extends Sorter {
     System.out.println();
     System.out.println("Worst case time complexity of SelectionSort is O(n^2)");
   }
-  /** Demonstrate the use of the BubbleSort algorithm. */
-  // public static void main(String[] args) {
-  //   char[] letters = {'C', 'E', 'B', 'D', 'A', 'I', 'J', 'L', 'K', 'H', 'G', 'F'};
-  //   System.out.println("Before: " + java.util.Arrays.toString(letters));
-  //   char[] sortedLetters = (new SelectionSort()).sort(letters);
-  //   System.out.println("After : " + java.util.Arrays.toString(sortedLetters));
-  //   int[] numbers = {1, 2, 4, 4, 9, 10, -10, 3, 8, 7, 20, 0};
-  //   System.out.println("Before: " + java.util.Arrays.toString(numbers));
-  //   int[] sortedNumbers = (new SelectionSort()).sort(numbers);
-  //   System.out.println("After : " + java.util.Arrays.toString(sortedNumbers));
-  // }
 }

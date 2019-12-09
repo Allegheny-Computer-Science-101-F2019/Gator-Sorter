@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * An implementation of the BubbleSort sorting algorithm.
  *
- * @author Gregory M. Kapfhammer
+ * @author Declan Casey, Noor Buchi, Pedro Carmo, Nolan Thompson
  */
 
 
@@ -18,15 +18,8 @@ public class BubbleSort extends Sorter {
   public BubbleSort() {
     name = "BubbleSort";
   }
-  // TODO: organize comments accordingly and ensure style
-  /** Bubble-sort of an array of chars into a nondecreasing order. This
-   * implementation of the sort method makes a complete copy of the input array,
-   * thus ensuring that it does not modify the input parameter.
-   *
-   * <p>Please refer to this site:
-   * https://docs.oracle.com/javase/7/docs/api/java/lang/System.html
-   * for more details about the System.arraycopy() method.
-   *
+
+  /** selection sort of an array of chars into a nondecreasing order.
    * @param source the source array that will be copied and sorted
    * @return the copied and sorted array in a nondecreasing order
    */
@@ -47,14 +40,7 @@ public class BubbleSort extends Sorter {
     return sorted;
   }
 
-  /** Bubble-sort of an array of ints into a nondecreasing order. This
-   * implementation of the sort method makes a complete copy of the input array,
-   * thus ensuring that it does not modify the input parameter.
-   *
-   * <p>Please refer to this site:
-   * https://docs.oracle.com/javase/7/docs/api/java/lang/System.html
-   * for more details about the System.arraycopy() method.
-   *
+  /** selection sort of an array of ints into a nondecreasing order.
    * @param source the source array that will be copied and sorted
    * @return the copied and sorted array in a nondecreasing order
    */
@@ -154,15 +140,4 @@ public class BubbleSort extends Sorter {
     System.out.println(
         "Worst case time complexity of SelectionSort is O(n^2)");
   }
-  /** Demonstrate the use of the BubbleSort algorithm. */
-  // public static void main(String[] args) {
-  //   char[] letters = {'C', 'E', 'B', 'D', 'A', 'I', 'J', 'L', 'K', 'H', 'G', 'F'};
-  //   System.out.println("Before: " + java.util.Arrays.toString(letters));
-  //   char[] sortedLetters = (new BubbleSort()).sort(letters);
-  //   System.out.println("After : " + java.util.Arrays.toString(sortedLetters));
-  //   int[] numbers = {1, 2, 4, 4, 9, 10, -10, 3, 8, 7, 20, 0};
-  //   System.out.println("Before: " + java.util.Arrays.toString(numbers));
-  //   int[] sortedNumbers = (new BubbleSort()).sort(numbers);
-  //   System.out.println("After : " + java.util.Arrays.toString(sortedNumbers));
-  // }
 }

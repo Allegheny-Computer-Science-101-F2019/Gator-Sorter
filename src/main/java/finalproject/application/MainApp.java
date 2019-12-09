@@ -13,10 +13,10 @@ import java.util.Scanner;
 
 // Done: Add all of the needed comments to this file
 /**
- * Main method creates RunCampaign,runs both bubbleSort and insertionSort in it.
+ * Main method creates RunCampaign,runs both bubbleSort, selectionSort and insertionSort in it.
  * and adds the result to the respecteive ResultsTable.
  *
- * @author Gregory M. Kapfhammer @author Noor Buchi
+ * @author Declan Casey, Noor Buchi, Pedro Carmo, Nolan Thompson
  */
 public class MainApp {
 
@@ -53,13 +53,6 @@ public class MainApp {
       System.out.print("(Size must be between 5 and 20)");
       dataSize = userInput.nextInt();
     }
-    // int dataSize = userInput.nextInt();
-    // Random random = new Random();
-    // if (dataSize <= 0 || dataSize > 20) {
-    //   System.out.println("The number you entered is not a valid size");
-    //   System.out.println("A valid number will be randomly generated");
-    //   dataSize = random.nextInt(15) + 5;
-    // }
     System.out.println("Chosen size of array: " + dataSize);
     int[] originalArray = generateRandomArray(dataSize);
     System.out.println("Genereated Array: " + Arrays.toString(originalArray));
@@ -101,12 +94,5 @@ public class MainApp {
                 + ": " + selectionSorter.sortToTime(copiedArray) + " nanoseconds");
       selectionSorter.displayInfo();
     }
-    // else {
-    //   System.out.println("Error: Number entered is not a valid choice");
-    //   System.out.println("Number must be 1, 2, or 3");
-    //   System.out.println("Please restart the program to continue");
-    // }
-
   }
-
 }

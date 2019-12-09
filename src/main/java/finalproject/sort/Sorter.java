@@ -32,14 +32,14 @@ public abstract class Sorter {
   public abstract int[] sort(int[] source);
 
   /** Require that a Sorter provide an efficient sorter method for int[]
-  *arrays without print statements.
+  * arrays without print statements.
   */
   public abstract int[] efficientSort(int[] source);
 
   /** Require that the sorter provides a method to explain its properties. */
   public abstract void displayInfo();
 
-  /** Done: add a Sorter and Timer method. */
+  /** Calls efficientSort and times it in nanoseconds. */
   public long sortToTime(int[] source) {
     long startTime = System.nanoTime();
     efficientSort(source);
@@ -69,6 +69,4 @@ public abstract class Sorter {
       //System.out.println("counter over limit");
     }
   }
-  /** TODO: add a Sorter and Explain method  */
-
 }
