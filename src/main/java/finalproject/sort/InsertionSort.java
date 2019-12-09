@@ -50,7 +50,7 @@ public class InsertionSort extends Sorter {
    * @param source the source array that will be copied and sorted
    * @return the copied and sorted array in a nondecreasing order
    */
-   
+
   public char[] sort(char[] source) {
     int length = source.length;
     char[] sorted = new char[source.length];
@@ -132,11 +132,11 @@ public class InsertionSort extends Sorter {
 
   public void displayInfo() {
     System.out.println();
-    System.out.print("The insertion sort algorithm sorts an array by repeatedly ");
-    System.out.println("comparing the current element to previous ones.");
+    System.out.print("The insertion sort algorithm sorts an array by repeatedly "
+        + "comparing the current element to previous ones.");
     System.out.println();
-    System.out.print("The algorithm inserts the current element in the spot ");
-    System.out.println(" where the previous element is less than the current one.");
+    System.out.print("The algorithm inserts the current element in the spot "
+        + " where the previous element is less than the current one.");
     System.out.println();
     System.out.print("Space is created for it by shifting the other elements one ");
     System.out.println("position to the right and inserting the element at the suitable position.");
