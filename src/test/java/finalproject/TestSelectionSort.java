@@ -4,19 +4,19 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import finalproject.sort.BubbleSort;
+import finalproject.sort.SelectionSort;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Random;
 
 /**
- * A JUnit test suite for the BubbleSort.
+ * A JUnit test suite for the SelectionSort.
  *
  * @author Gregory M. Kapfhammer
  */
 
-public class TestBubbleSort {
+public class TestSelectionSort {
 
   /** The maximum number of items to use for testing. */
   private static int MAXIMUM_NUMBER_ITEMS = 100;
@@ -53,14 +53,14 @@ public class TestBubbleSort {
   }
 
   @Test
-  public void testBubbleSortCorrectName() {
-    assertEquals((new BubbleSort()).getName(), "BubbleSort");
+  public void testSelectionSortCorrectName() {
+    assertEquals((new SelectionSort()).getName(), "SelectionSort");
   }
 
   @Test
-  public void testBubbleSortWithInt() {
+  public void testSelectionSortWithInt() {
     int[] numbers = {1, 2, 4, 4, 9, 10, -10, 3, 8, 7, 20, 0};
-    int[] sortedNumbers = (new BubbleSort()).efficientSort(numbers);
+    int[] sortedNumbers = (new SelectionSort()).efficientSort(numbers);
     assertTrue(!isSorted(numbers));
     assertTrue(isSorted(sortedNumbers));
     int[] numbersClone = Arrays.copyOf(numbers, numbers.length);
@@ -69,12 +69,12 @@ public class TestBubbleSort {
   }
 
   @Test
-  public void testBubbleSortWithManyOrderedInts() {
+  public void testSelectionSortWithManyOrderedInts() {
     int[] originalArray = new int[MAXIMUM_NUMBER_ITEMS];
     for (int i = 0; i < originalArray.length; i++) {
       originalArray[i] = i;
     }
-    int[] sortedArray = (new BubbleSort()).efficientSort(originalArray);
+    int[] sortedArray = (new SelectionSort()).efficientSort(originalArray);
     assertTrue(isSorted(originalArray));
     assertTrue(isSorted(sortedArray));
     int[] originalClone = Arrays.copyOf(originalArray, originalArray.length);
@@ -83,13 +83,13 @@ public class TestBubbleSort {
   }
 
   @Test
-  public void testBubbleSortWithManyRandomInts() {
+  public void testSelectionSortWithManyRandomInts() {
     Random random = new Random();
     int[] originalArray = new int[MAXIMUM_NUMBER_ITEMS];
     for (int i = 0; i < originalArray.length; i++) {
       originalArray[i] = random.nextInt();
     }
-    int[] sortedArray = (new BubbleSort()).efficientSort(originalArray);
+    int[] sortedArray = (new SelectionSort()).efficientSort(originalArray);
     assertTrue(isSorted(sortedArray));
     int[] originalClone = Arrays.copyOf(originalArray, originalArray.length);
     Arrays.sort(originalClone);

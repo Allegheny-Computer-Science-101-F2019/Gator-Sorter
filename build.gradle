@@ -16,6 +16,18 @@ repositories {
   mavenCentral()
 }
 
+// specify the use of JUnit for testing
+dependencies {
+  testCompile 'junit:junit:4.9'
+}
+
+// always produce diagnostic output when running the test suite
+test {
+  testLogging {
+    events "passed", "skipped", "failed", "standardOut", "standardError"
+  }
+}
+
 // specify the use of the gradle version
 wrapper {
   gradleVersion = '4.9'
