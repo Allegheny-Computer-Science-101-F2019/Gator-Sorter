@@ -58,4 +58,4 @@ script:
   # This program is interactive, so this is not possible
   # - gradle run
   # GatorGrader: see config/gatorgrader.yml
-  - gradle grade -x build
+  # - gradle grade -x build
